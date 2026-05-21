@@ -1,0 +1,79 @@
+@use "sass:map";
+@use "./variables" as *;
+@use "./mixins" as *;
+
+// VG-krav: @extend
+.button-base {
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar {
+  @include flex-center;
+  justify-content: space-between;
+  background: $primary-color;
+  padding: map.get($spacing, medium);
+
+  div {
+    display: flex;
+    gap: 10px;
+  }
+}
+
+.button {
+  @extend .button-base;
+  @include button-style($primary-color);
+}
+
+.button-danger {
+  @extend .button-base;
+  @include button-style($danger-color);
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: map.get($spacing, medium);
+}
+
+.product-card {
+  @include card;
+
+  h3 {
+    margin-top: 12px;
+  }
+
+  .button-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+}
+
+.form {
+  @include card;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  input {
+    padding: 10px;
+  }
+}
+
+.image-uploader {
+  @include card;
+  margin-top: 20px;
+
+  .preview {
+    margin-top: 12px;
+
+    img {
+      max-width: 250px;
+      border-radius: 10px;
+    }
+  }
+}

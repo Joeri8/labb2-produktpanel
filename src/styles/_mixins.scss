@@ -1,0 +1,27 @@
+@use "sass:map";
+@use "./variables" as *;
+
+// Mixin för flexbox
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Mixin för knappar
+@mixin button-style($bgColor) {
+  background: $bgColor;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+// Mixin för kort
+@mixin card {
+  background: white;
+  border-radius: 10px;
+  padding: map.get($spacing, medium);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
