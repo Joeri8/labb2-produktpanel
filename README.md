@@ -51,3 +51,13 @@ Används när en produkt tas bort.
 - React Router
 - SCSS
 - Vite
+
+## Bilduppladdning
+
+Bilduppladdningen görs med en egen Express-server och Multer.
+
+Frontend skickar bilden till:
+
+POST /api/upload
+
+Servern sparar bilden i uploads-mappen och skickar tillbaka en imageUrl som sedan visas på sidan.
